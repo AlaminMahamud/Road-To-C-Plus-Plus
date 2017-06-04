@@ -25,3 +25,49 @@
 | The         | main     | template | fun():a     |         |
 | Specialized | template | for      | int         | type:10 |
 | The         | main     | template | fun():10.14 |         |
+
+
+* An Example program for funciton template specialization
+#+BEGIN_SRC cpp
+  #include <iostream>
+  using namespace std;
+
+  template <class T>
+  class Test{
+    // Data members of test
+  public:
+    Test()
+    {
+      // Initialization of data members
+      cout << "General template object \n";
+    }
+  };
+
+  template<>
+  class Test<int>{
+    // Data members of test
+  public:
+    Test(){
+      // INitialization of DAta Members
+      cout << "Specialized template object\n";
+    }
+  };
+
+
+  int main(){
+    Test<int> a;
+    Test<char> b;
+    Test<float> c;
+    return 0;es
+  }
+#+END_SRC
+
+#+RESULTS:
+| Specialized | template | object |
+| General     | template | object |
+| General     | template | object |
+
+* How does template specialization work?
+
+When we write any template based function or class, compiler creates a copy of that function/class whenever compiler
+sees that being used for a new data type or new set of data types (in case of multiple template arguments).
