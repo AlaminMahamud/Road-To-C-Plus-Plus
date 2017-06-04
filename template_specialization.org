@@ -1,0 +1,26 @@
+#+BEGIN_SRC cpp
+  # include <bits/stdc++.h>
+  using namespace std;
+
+  template <class T>
+  void fun(T a){
+  cout << "The main template fun(): " << a << endl;
+  }
+
+  template<>
+  void fun(int a){
+    cout << "Specialized template for int type: " << a << endl;
+  }
+
+  int main(){
+    fun<char> ('a');
+    fun<int>(10);
+    fun<float>(10.14);es
+
+  }
+#+END_SRC
+
+#+RESULTS:
+| The         | main     | template | fun(): | a     |    |
+| Specialized | template | for      | int    | type: | 10 |
+| The         | main     | template | fun(): | 10.14 |    |
