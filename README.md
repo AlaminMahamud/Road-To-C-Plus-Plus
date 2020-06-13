@@ -1,2 +1,3 @@
-# Road-To-C-Plus-Plus
-practice codes of c++ books
+# Road to C/C++
+
+Practice codes of C/C++
